@@ -4,9 +4,11 @@
 #define _RELAY_h
 
 #include "Arduino.h"
+
+#define _R_NORMALLY_OPEN    true
+#define _R_NORMALLY_CLOSE   false
   
-class Relay
-{
+class Relay {
  protected:
 	 int pin;
 	 bool state;
@@ -15,6 +17,8 @@ class Relay
  public:
 	 Relay();
 	 Relay(int p, bool isNormallyOpen);
+     void setPin( int p );
+     void setNormally( bool isNormallyOpen );
 	 void begin();
 	 bool getState();
 	 void turnOn();
